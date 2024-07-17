@@ -8,10 +8,6 @@ public class TaskManager {
 
     private int nextID = 1;
 
-    private int getNextID() {
-        return nextID++;
-    }
-
     public Task addTask(Task task) {
         task.setId(getNextID());
         tasks.put(task.getId(), task);
@@ -176,5 +172,9 @@ public class TaskManager {
         } else {
             epic.setStatus(Status.IN_PROGRESS);
         }
+    }
+
+    private int getNextID() {
+        return nextID++;
     }
 }
